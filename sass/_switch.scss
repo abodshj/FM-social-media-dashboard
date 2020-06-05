@@ -1,0 +1,27 @@
+.switch { 
+  position : relative ;
+  display : inline-block;
+  width : 40px;
+  height : 20px;
+  background-image: linear-gradient(1200deg,hsl(210, 78%, 56%),hsl(146, 68%, 55%));
+  border-radius: 20px;
+
+  &::after {
+    content: '';
+    position: absolute;
+    width: 18px;
+    height: 18px;
+    border-radius: 50%;
+    background-color: white;
+    top: 1px; // TO GIVE AN EFFECT OF CIRCLE INSIDE SWITCH.
+    left: 1px;
+    transition: all 0.3s;
+  }
+}
+.checkbox:checked + .switch::after {
+  left : 21px; 
+}
+
+.checkbox { 
+  display : none;
+}

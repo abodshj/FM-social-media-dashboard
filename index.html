@@ -1,0 +1,209 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <!-- displays site properly based on user's device -->
+
+  <link rel="icon" type="image/png" sizes="32x32" href="./images/favicon-32x32.png">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="sass/app.css">
+
+  <title>Frontend Mentor | [Challenge Name Here]</title>
+
+  <!-- Feel free to remove these styles or customise in your own stylesheet 👍 -->
+  <style>
+    .attribution {
+      font-size: 11px;
+      text-align: center;
+    }
+
+    .attribution a {
+      color: hsl(228, 45%, 44%);
+    }
+  </style>
+</head>
+
+<body>
+  <div class="light" id="main">
+    <div class="container">
+      <div class="container__header">
+        <div class="container__header__title">
+          <h2 class="container__header__title__name">Social Media Dashboard</h2>
+          <h3 class="container__header__title__followers">Total Followers: 23,004</h3>
+        </div>
+        <div class="container__header__mode">
+          <span><strong>Dark Mode</strong></span>
+          <input type="checkbox" id="toggle" class="checkbox" />
+          <label for="toggle" class="switch"></label>
+        </div>
+      </div>
+      <div class="container__body">
+        <div class="container__body__card-fb">
+          <div class="logo">
+            <img src="images/icon-facebook.svg" alt="fb">
+            <span>@nathanf</span>
+          </div>
+          <span class="num">1987</span>
+          <span class="followers">Followers</span>
+          <div class="today up">
+            <img src="images/icon-up.svg" alt="up">
+            <span>12 Today</span>
+          </div>
+        </div>
+        <div class="container__body__card-tw">
+          <div class="logo">
+            <img src="images/icon-twitter.svg" alt="tw">
+            <span>@nathanf</span>
+          </div>
+          <span class="num">99</span>
+          <span class="followers">Followers</span>
+          <div class="today up">
+            <img src="images/icon-up.svg" alt="up">
+            <span>12 Today</span>
+          </div>
+        </div>
+        <div class="container__body__card-ig">
+          <div class="logo">
+            <img src="images/icon-instagram.svg" alt="ig">
+            <span>@realnathanf</span>
+          </div>
+          <span class="num">11k</span>
+          <span class="followers">Followers</span>
+          <div class="today up">
+            <img src="images/icon-up.svg" alt="up">
+            <span>1099 Today</span>
+          </div>
+        </div>
+        <div class="container__body__card-yt">
+          <div class="logo">
+            <img src="images/icon-youtube.svg" alt="yt">
+            <span>Nathan F.</span>
+          </div>
+          <span class="num">8239</span>
+          <span class="followers">Subscribers</span>
+          <div class="today down">
+            <img src="images/icon-down.svg" alt="down">
+            <span>144 Today</span>
+          </div>
+        </div>
+
+      </div>
+      <div class="container__overview">
+        <h2>Overview - Today</h2>
+        <div class="container__overview__sm-card">
+          <div class="row">
+            <span>Page Views</span>
+            <img src="images/icon-facebook.svg" alt="fb">
+          </div>
+          <div class="row">
+            <span class="row__num">87</span>
+            <div class="today up">
+              <img src="images/icon-up.svg" alt="up">
+              <span>3%</span>
+            </div>
+          </div>
+        </div>
+        <div class="container__overview__sm-card">
+          <div class="row">
+            <span>Likes</span>
+            <img src="images/icon-facebook.svg" alt="fb">
+          </div>
+          <div class="row">
+            <span class="row__num">52</span>
+            <div class="today down">
+              <img src="images/icon-down.svg" alt="down">
+              <span>2%</span>
+            </div>
+          </div>
+        </div>
+        <div class="container__overview__sm-card">
+          <div class="row">
+            <span>Likes</span>
+            <img src="images/icon-instagram.svg" alt="ig">
+          </div>
+          <div class="row">
+            <span class="row__num">5462</span>
+            <div class="today up">
+              <img src="images/icon-up.svg" alt="up">
+              <span>2257%</span>
+            </div>
+          </div>
+        </div>
+        <div class="container__overview__sm-card">
+          <div class="row">
+            <span>Profile Views</span>
+            <img src="images/icon-twitter.svg" alt="tw">
+          </div>
+          <div class="row">
+            <span class="row__num">52k</span>
+            <div class="today up">
+              <img src="images/icon-up.svg" alt="up">
+              <span>1375%</span>
+            </div>
+          </div>
+        </div>
+        <div class="container__overview__sm-card">
+          <div class="row">
+            <span>Retweets</span>
+            <img src="images/icon-twitter.svg" alt="tw">
+          </div>
+          <div class="row">
+            <span class="row__num">117</span>
+            <div class="today up">
+              <img src="images/icon-up.svg" alt="up">
+              <span>303%</span>
+            </div>
+          </div>
+        </div>
+        <div class="container__overview__sm-card">
+          <div class="row">
+            <span>Likes</span>
+            <img src="images/icon-twitter.svg" alt="tw">
+          </div>
+          <div class="row">
+            <span class="row__num">507</span>
+            <div class="today up">
+              <img src="images/icon-up.svg" alt="up">
+              <span>553%</span>
+            </div>
+          </div>
+        </div>
+        <div class="container__overview__sm-card">
+          <div class="row">
+            <span>Likes</span>
+            <img src="images/icon-youtube.svg" alt="fb">
+          </div>
+          <div class="row">
+            <span class="row__num">107</span>
+            <div class="today down">
+              <img src="images/icon-down.svg" alt="down">
+              <span>19%</span>
+            </div>
+          </div>
+        </div>
+        <div class="container__overview__sm-card">
+          <div class="row">
+            <span>Total Views</span>
+            <img src="images/icon-youtube.svg" alt="yt">
+          </div>
+          <div class="row">
+            <span class="row__num">1407</span>
+            <div class="today up">
+              <img src="images/icon-up.svg" alt="up">
+              <span>12%</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="attribution">
+    Challenge by <a href="https://www.frontendmentor.io?ref=challenge" target="_blank">Frontend Mentor</a>.
+    Coded by <a href="#">Abodshj</a>.
+  </div>
+  <script src="js/app.js"></script>
+</body>
+
+</html>

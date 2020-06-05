@@ -1,0 +1,335 @@
+@mixin theme($theme-name: light) {
+  @if $theme-name == light {
+    @at-root body .light {
+      background-color: hsl(0, 0%, 100%);
+    }
+    .switch {
+      background-image: unset;
+    }
+    .container {
+      &::before {
+        background-color: $lt-very-pale-blue-top-bg;
+      }
+      color: $lt-dark-grayish-blue-text;
+      &__header {
+        &__title {
+          &__name {
+            color: black;
+          }
+          &__followers {
+            border-bottom-color: $lt-dark-grayish-blue-text;
+          }
+        }
+        &__mode {
+          .checkbox:checked + .switch {
+            background-color: $light-theme-toggle;
+          }
+        }
+      }
+
+      &__body {
+        .num {
+          color: $lt-very-dark-blue-text;
+        }
+      }
+
+      &__overview {
+        &__sm-card {
+          .row {
+            &__num {
+              color: $lt-very-dark-blue-text;
+            }
+          }
+        }
+      }
+
+      [class*="__card"],
+      [class*="__sm-card"] {
+        background-color: hsl(227, 47%, 96%);
+      }
+
+      .up {
+        color: $lime-green;
+      }
+
+      .down {
+        color: $bright-red;
+      }
+    }
+  } @else if $theme-name == dark {
+    @at-root body .dark {
+      background-color: $dt-very-dark-blue-bg;
+    }
+    .switch {
+      &::after {
+        background-color: black;
+      }
+    }
+    .container {
+      &::before {
+        background-color: $dt-very-dark-blue-top-bg;
+      }
+      color: $dt-desaturated-blue-text;
+      &__header {
+        &__title {
+          &__name {
+            color: white;
+          }
+          &__followers {
+            border-bottom-color: $dt-desaturated-blue-text;
+          }
+        }
+        &__mode {
+          .switch {
+            background-image: black;
+          }
+        }
+      }
+
+      [class*="__card"],
+      [class*="__sm-card"] {
+        background-color: $dt-dark-desaturated-blue-card-bg;
+      }
+
+      &__body {
+        .num {
+          color: white;
+        }
+      }
+
+      &__overview {
+        &__sm-card {
+          .row {
+            &__num {
+              color: white;
+            }
+          }
+        }
+      }
+
+      .up {
+        color: $lime-green;
+      }
+
+      .down {
+        color: $bright-red;
+      }
+    }
+  }
+}
+
+@mixin style {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  z-index: 0;
+  .container {
+    display: flex;
+    flex-direction: column;
+    &::before {
+      content: "";
+      position: absolute;
+      width: 100%;
+      height: 200px;
+      top: 0px;
+      left: 0px;
+      z-index: -1;
+      border-radius: 0 0 22px 22px;
+    }
+    margin: 21px 28px;
+
+    &__header {
+      display: flex;
+      flex-flow: column;
+      flex: 1;
+      &__title {
+        flex: 1;
+        &__name {
+          margin-bottom: 0;
+        }
+        &__followers {
+          font-size: 13px;
+          margin-top: 5px;
+          padding-bottom: 22px;
+          border-bottom: 1px solid;
+        }
+      }
+
+      &__mode {
+        display: flex;
+        flex-direction: row;
+        justify-content: space-between;
+        align-items: center;
+      }
+    }
+
+    &__body {
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      margin-top: 40px;
+
+      [class*="__card"] {
+        flex: 1;
+        width: 100%;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        border-radius: 5px;
+        margin-bottom: 20px;
+
+        .logo {
+          display: flex;
+          align-items: center;
+          margin-top: 20px;
+          margin-bottom: 21px;
+          img {
+            margin-right: 7px;
+          }
+        }
+
+        .num {
+          font-weight: 700;
+          font-size: 42px;
+        }
+
+        .followers {
+          text-transform: uppercase;
+          letter-spacing: 1px;
+          margin-top: 2px;
+          margin-bottom: 22px;
+        }
+        .today {
+          font-weight: 700;
+          display: flex;
+          align-items: center;
+          margin-bottom: 22px;
+          img {
+            margin-right: 5px;
+          }
+        }
+      }
+
+      &__card-fb {
+        border-top: 3px solid $facebook;
+      }
+      &__card-tw {
+        border-top: 3px solid $twitter;
+      }
+      &__card-ig {
+        &::before {
+          content: "";
+          position: relative;
+          background-image: $instagram;
+          width: inherit;
+          height: 3px;
+          top: -3px;
+          border-top-right-radius: 35%;
+          border-top-left-radius: 35%;
+        }
+        border-top: 3px solid hsl(329, 70%, 58%);
+      }
+      &__card-yt {
+        border-top: 3px solid $youtube;
+      }
+    }
+
+    &__overview {
+      display: flex;
+      flex-direction: column;
+      flex: 1;
+
+      &__sm-card {
+        border-radius: 5px;
+        margin-bottom: 15px;
+        .row {
+          display: flex;
+          justify-content: space-between;
+          margin: 20px;
+          font-weight: 700;
+          &__num {
+            font-size: 28px;
+            color: black;
+          }
+          .today {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            img {
+              margin-right: 5px;
+            }
+          }
+        }
+      }
+    }
+  }
+
+  @media screen and (min-width:900px) {
+    .container {
+        flex-direction: column;
+        &::before {
+          height: 250px;
+        }    
+        &__header {
+          flex-flow: row;
+          &__title {
+            &__followers {
+              border-bottom: none;
+            }
+          }
+    
+          &__mode {
+            span{
+                margin-right: 10px;
+            }
+          }
+        }
+    
+        &__body {
+          flex-flow: row wrap;
+
+          :not(:last-child){
+            margin-right: 4%;
+          }
+        }
+    
+        &__overview {
+          flex-flow: row wrap;
+          h2{
+              flex-basis: 100%;
+          }
+
+          :not(:nth-of-type(4n)){
+              margin-right: 4%;
+          }
+    
+          &__sm-card {
+              flex-basis: 22%;
+            border-radius: 5px;
+            margin-bottom: 15px;
+            .row {
+              display: flex;
+              justify-content: space-between;
+              margin: 20px;
+              font-weight: 700;
+              &__num {
+                font-size: 28px;
+                color: black;
+              }
+              .today {
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                img {
+                  margin-right: 5px;
+                }
+              }
+            }
+          }
+        }
+      }
+  }
+}

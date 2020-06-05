@@ -1,0 +1,34 @@
+@import "_variables.scss";
+@import "_mixin.scss";
+@import "switch";
+
+html {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  
+}
+
+*,
+*::before,
+*::after {
+  box-sizing: inherit;
+}
+
+body {
+  font-size: 14px;
+  font-family: "Inter", sans-serif;
+  width: 100%;
+  overflow-x: hidden;
+  
+}
+
+.light {
+  @include style;
+  @include theme("light");
+}
+
+.dark{
+    @include style;
+    @include theme("dark")
+}
